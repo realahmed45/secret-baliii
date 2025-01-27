@@ -11,9 +11,9 @@
     "i18next": "^24.2.1",
     "i18next-browser-languagedetector": "^8.0.2",
     "i18next-http-backend": "^3.0.1",
-    "lucide-react": "^0.473.0",
-    "react": "^19.0.0",
-    "react-dom": "^19.0.0",
+    "lucide-react": "^0.474.0",
+    "react": "^18.0.0",
+    "react-dom": "^18.0.0",
     "react-i18next": "^15.4.0",
     "react-icons": "^5.4.0",
     "react-multi-lang": "^2.2.0",
@@ -23,7 +23,7 @@
   },
   "scripts": {
     "start": "react-scripts start",
-    "build": "npm install --legacy-peer-deps && react-scripts build",
+    "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
   },
@@ -48,6 +48,6 @@
   "devDependencies": {
     "autoprefixer": "^10.4.20",
     "postcss": "^8.5.1",
-    "tailwindcss": "^3.4.17"
+    "tailwindcss": "^4.0.0"
   }
 }
