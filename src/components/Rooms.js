@@ -1,4 +1,6 @@
 import React, { useState, useEffect } from "react";
+import { Link } from "react-router-dom";
+
 import Navbar from "./navbar";
 import Footer from "./footer";
 import Calendar from "./calender2";
@@ -184,124 +186,6 @@ const Rooms = () => {
       {/* Navbar */}
       <Navbar />
 
-      {/* Hero Section */}
-      <div className="relative w-full h-[130vh] overflow-hidden mt-8">
-        {/* Background Images with Animation */}
-        {images1.map((image, index) => (
-          <div
-            key={index}
-            className={`absolute top-0 left-0 w-full h-full transition-opacity duration-1000 ${
-              index === currentImageIndex
-                ? "opacity-100 scale-105"
-                : "opacity-0 scale-100"
-            }`}
-            style={{
-              backgroundImage: `url(${image})`,
-              backgroundSize: "cover",
-              backgroundPosition: "center",
-              transition: "transform 5s ease-in-out",
-            }}
-          ></div>
-        ))}
-
-        {/* Overlay Content */}
-        <div className="absolute inset-0 flex justify-center items-center px-6 bg-black bg-opacity-50">
-          <div className="container mx-auto flex flex-col lg:flex-row items-center justify-between w-full max-w-6xl">
-            {/* Left Section: Heading */}
-            <div className="text-white max-w-lg text-center lg:text-left mb-10 lg:mb-0">
-              <h1 className="text-4xl font-bold mb-6 ml-5 leading-snug text-left sm:text-3xl md:text-5xl lg:text-left lg:max-w-lg">
-                Experience Comfort and Charm in Kuta: Stay at Our Spacious
-                Beachfront Villa.
-              </h1>
-              {/* Hide text for smaller screens */}
-              <p className="text-lg md:text-xl leading-loose hidden lg:block">
-                Enjoy beachfront access, unlimited breakfast, and a friendly cat
-                companion in our stylish villa, perfect for families and digital
-                nomads.
-              </p>
-            </div>
-
-            {/* Right Section: Book Now Form */}
-            {showBookNow && (
-              <div className="relative bg-white text-gray-800  shadow-lg px-6 py-6 w-full sm:w-3/4 md:w-2/3 lg:w-[35%] lg:h-[400px] max-w-sm lg:max-w-none">
-                {/* Close Button for Small Screens */}
-                <button
-                  className="absolute top-2 right-2 text-gray-500 text-lg lg:hidden"
-                  onClick={() => setShowBookNow(false)}
-                >
-                  ×
-                </button>
-
-                <h2 className="text-xl font-semibold text-center mb-6 lg:mr-64 text-[#dc9c34]">
-                  Book Now
-                </h2>
-                <form className="space-y-4">
-                  <div>
-                    <label
-                      htmlFor="checkin"
-                      className="block text-sm font-medium text-gray-700 flex items-center"
-                    >
-                      <span className="mr-2 mb-2 text-[#dc9c34]">📅</span>
-                      Check-in
-                    </label>
-                    <input
-                      id="checkin"
-                      type="date"
-                      className="w-full border border-gray-300 rounded-md px-3 py-2 focus:ring-2 focus:ring-[#dc9c34]"
-                    />
-                  </div>
-                  <div>
-                    <label
-                      htmlFor="checkout"
-                      className="block text-sm font-medium text-gray-700 flex items-center"
-                    >
-                      <span className="mr-2 text-[#dc9c34] mb-2">📅</span>
-                      Check-Out
-                    </label>
-                    <input
-                      id="checkout"
-                      type="date"
-                      className="w-full border border-gray-300 rounded-md px-3 py-2 focus:ring-2 focus:ring-[#dc9c34]"
-                    />
-                  </div>
-                  <div>
-                    <label
-                      htmlFor="guests"
-                      className="block text-sm font-medium text-gray-700 flex items-center"
-                    >
-                      <span className="mr-2 mb-2 text-[#dc9c34]">👤</span>
-                      Guests
-                    </label>
-                    <input
-                      id="guests"
-                      type="number"
-                      className="w-full border border-gray-300 rounded-md px-3 py-2 focus:ring-2 focus:ring-[#dc9c34]"
-                      placeholder="Number of guests"
-                    />
-                  </div>
-                  <div className="flex items-center space-x-2">
-                    <input
-                      type="checkbox"
-                      id="terms"
-                      className="w-4 h-4 text-[#dc9c34] border-gray-300 rounded focus:ring-2 focus:ring-[#dc9c34]"
-                    />
-                    <label htmlFor="terms" className="text-sm">
-                      I agree to the terms and conditions
-                    </label>
-                  </div>
-                  <button
-                    type="submit"
-                    className="bg-[#dc9c34] text-white font-semibold px-6 py-3  shadow hover:bg-[#d19a1a] w-full"
-                  >
-                    ⚡ Instant Booking
-                  </button>
-                </form>
-              </div>
-            )}
-          </div>
-        </div>
-      </div>
-
       {/* Intro Paragraph */}
       <section className="mt-8 px-4 md:px-12 lg:px-20 text-center">
         <h2 className="text-2xl md:text-3xl font-semibold text-[#dc9c34] mb-7  mt-20">
@@ -336,7 +220,6 @@ const Rooms = () => {
       </div>
 
       {/* Active Section Content */}
-      {/* Active Section Content */}
       <section className="mt-6 mb-20 px-4 md:px-12 lg:px-40 flex flex-col md:flex-row items-center gap-6">
         <div className="w-full md:w-1/2 mb-10">
           <h2 className="text-2xl md:text-3xl font-bold text-[#dc9c34] mb-4">
@@ -353,9 +236,19 @@ const Rooms = () => {
               </li>
             ))}
           </ul>
-          <button className="bg-[#dc9c34] text-white py-2 px-4 md:px-6 shadow-md hover:bg-[#d19a1a]">
-            Book Now
-          </button>
+          {activeSection <= 4 && (
+            <div className="flex flex-col">
+              <Link
+                to={`/property-${activeSection}`}
+                className="text-black font-bold mb-2"
+              >
+                For more info click here
+              </Link>
+              <button className="bg-[#dc9c34] text-white py-2 px-4 md:px-6 shadow-md hover:bg-[#d19a1a]">
+                Book Now
+              </button>
+            </div>
+          )}
         </div>
         <div className="w-full md:w-1/2">
           <img

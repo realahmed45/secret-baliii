@@ -58,7 +58,7 @@ const Navbar = () => {
               { to: "/faqs", textKey: "navbar.about" },
               { to: "/rooms", textKey: "navbar.rooms" },
               { to: "/services", textKey: "navbar.services" },
-              { to: "/packages", textKey: "navbar.packages" },
+              { to: "/travel", textKey: "navbar.packages" },
               { to: "/gallery", textKey: "navbar.gallery" },
               { to: "/travel", textKey: "navbar.travel" },
             ].map(({ to, textKey }) => (
@@ -198,7 +198,7 @@ const Navbar = () => {
                 { to: "/about", textKey: "navbar.about" },
                 { to: "/rooms", textKey: "navbar.rooms" },
                 { to: "/services", textKey: "navbar.services" },
-                { to: "/packages", textKey: "navbar.packages" },
+                { to: "/travel", textKey: "navbar.packages" },
                 { to: "/gallery", textKey: "navbar.gallery" },
                 { to: "/travel", textKey: "navbar.travel" },
               ].map(({ to, textKey }) => (

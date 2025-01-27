@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom"; // Ensure React Router's Link is imported
-import bgVideo from "../videos/bg.mp4";
+
 import logo from "../images/logo.png"; // Import logo image
 import UKFlag from "../images/flags/uk.png"; // Adjust all flag imports based on your file paths
 import ArabicFlag from "../images/flags/arabic.png";
@@ -55,10 +55,10 @@ const MainHome = () => {
           <div className="flex space-x-4 mb-10">
             {[
               { to: "/home-page", textKey: "navbar.homepage" },
-              { to: "/about", textKey: "navbar.about" },
+              { to: "/faqs", textKey: "navbar.about" },
               { to: "/rooms", textKey: "navbar.rooms" },
               { to: "/services", textKey: "navbar.services" },
-              { to: "/packages", textKey: "navbar.packages" },
+              { to: "/travel", textKey: "navbar.packages" },
               { to: "/gallery", textKey: "navbar.gallery" },
               { to: "/travel", textKey: "navbar.travel" },
             ].map(({ to, textKey }) => (
@@ -195,10 +195,10 @@ const MainHome = () => {
             <div className="flex flex-col space-y-4 mt-2 px-4 text-1xl">
               {[
                 { to: "/home-page", textKey: "navbar.homepage" },
-                { to: "/about", textKey: "navbar.about" },
+                { to: "/faqs", textKey: "navbar.about" },
                 { to: "/rooms", textKey: "navbar.rooms" },
                 { to: "/services", textKey: "navbar.services" },
-                { to: "/packages", textKey: "navbar.packages" },
+                { to: "/travel", textKey: "navbar.packages" },
                 { to: "/gallery", textKey: "navbar.gallery" },
                 { to: "/travel", textKey: "navbar.travel" },
               ].map(({ to, textKey }) => (
@@ -227,7 +227,10 @@ const MainHome = () => {
             muted
             preload="metadata"
           >
-            <source src={bgVideo + "#t=5"} type="video/mp4" />
+            <source
+              src="https://mysecrethomebali.com/wp-content/uploads/2024/09/Untitled-design.mp4"
+              type="video/mp4"
+            />
             {t("homepage.videoFallback")} {/* Translatable fallback message */}
           </video>
           {/* Black Cover */}
