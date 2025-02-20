@@ -165,6 +165,38 @@ const Rooms = () => {
     },
     {
       id: 5,
+      title: "Bedroom 5",
+      heading: "Room 5 (india)",
+      description: `
+        Relax in the welcoming comfort of our entire villa. This space seamlessly combines a laid-back aesthetic with modern amenities, featuring soothing colors, plush textures, and tranquil decor. Gentle ambient lighting and thoughtfully chosen furnishings create a serene retreat, providing a wonderful escape that encourages relaxation and harmony in your Bali getaway.
+      `,
+      tickPoints: [
+        "Spacious Loft Design",
+        "Dedicated Workspace",
+        "Cozy Linens and Towels",
+        "Private Attached Bathroom",
+      ],
+      image:
+        "https://mysecrethomebali.com/wp-content/uploads/2024/08/download-36-1-1024x768.png",
+    },
+    {
+      id: 6,
+      title: "Bedroom 6",
+      heading: "Room 6 (india)",
+      description: `
+        Relax in the welcoming comfort of our entire villa. This space seamlessly combines a laid-back aesthetic with modern amenities, featuring soothing colors, plush textures, and tranquil decor. Gentle ambient lighting and thoughtfully chosen furnishings create a serene retreat, providing a wonderful escape that encourages relaxation and harmony in your Bali getaway.
+      `,
+      tickPoints: [
+        "Spacious Loft Design",
+        "Dedicated Workspace",
+        "Cozy Linens and Towels",
+        "Private Attached Bathroom",
+      ],
+      image:
+        "https://mysecrethomebali.com/wp-content/uploads/2024/08/download-36-1-1024x768.png",
+    },
+    {
+      id: 7,
       title: "Full Villa",
       heading: "Full Villa",
       description: `
@@ -260,30 +292,27 @@ const Rooms = () => {
       </section>
 
       {/* Image Gallery Section */}
-      <div className="lg:mt-4 mb-20   px-4 md:px-48 lg:mr-48 ">
+      <div className="lg:mt-4 mb-20 px-4 md:px-20 lg:mr-48 ">
         <div className="flex flex-col md:flex-row items-center justify-between">
-          {/* Left: Image Grid */}
           <div className="w-full md:w-2/3 grid grid-cols-2 sm:grid-cols-3 gap-4">
             {images.map((image, index) => (
               <img
                 key={index}
                 src={image}
                 alt={`Gallery Image ${index + 1}`}
-                className="rounded-lg shadow-md cursor-pointer hover:opacity-80 transition-opacity duration-300 "
+                className="rounded-lg shadow-md cursor-pointer hover:opacity-80 transition-opacity duration-300 ml-14"
+                style={{ height: "150px", objectFit: "cover", width: "100%" }}
                 onClick={() => openModal(index)}
               />
             ))}
           </div>
-          {/* Right: Heading */}
-          <div className="w-full md:w-1/3 text-right">
-            <h2 className="text-4xl ml-10 md:text-4xl font-normal text-[#dc9c34] text-center sm: mt-5">
+          <div className="w-full md:w-1/3 text-right p-0">
+            <h2 className="text-3xl ml-20 font-bold text-[#dc9c34] text-center">
               Your Ideal Bali Retreat Awaits at Our Serene Beach Home
             </h2>
           </div>
         </div>
       </div>
-
-      {/* Modal for Image Viewer */}
       {isModalOpen && (
         <div className="fixed inset-0 bg-black bg-opacity-80 flex justify-center items-center z-50">
           <button
@@ -309,7 +338,7 @@ const Rooms = () => {
       )}
       <Calendar />
 
-      <section className="py-16">
+      <section className="py-40">
         <div className="container mx-auto px-6 md:px-12 lg:px-20">
           <h2 className="text-3xl md:text-4xl font-semibold text-[#dc9c34] text-center mb-6">
             Frequently Asked Questions

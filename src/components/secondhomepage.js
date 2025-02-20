@@ -114,29 +114,12 @@ const Homepage = () => {
   };
 
   return (
-    <div className="relative w-full h-screen">
+    <div className="relative w-full h-screen ">
       {/* Navbar */}
       <Navbar />
 
       {/* Hero Section with Background Image */}
-      <div
-        className="relative lg:w-[85%] mt-20 h-[80%] bg-cover bg-center mx-auto border-[5px] border-white rounded-[20px] "
-        style={{
-          backgroundImage: `url(${backgroundImage})`,
-        }}
-      >
-        {/* Text Content */}
-        <div className="absolute inset-0 flex flex-col justify-center items-center bg-black bg-opacity-40">
-          <p className="text-white text-sm md:text-lg uppercase tracking-wide mb-12">
-            Stay With Us And Feel Like Home
-          </p>
-          <h1 className="text-white text-3xl md:text-4xl font-bold text-center mt-1">
-            Enjoy The Nature At Our <br />
-            <br />
-            Luxurious Villa
-          </h1>
-        </div>
-
+      <div className="relative lg:w-[85%] mt-0 h-[40%] bg-cover bg-center mx-auto border-[5px] border-white rounded-[20px] ">
         {/* Search Bar for larger screens */}
         <div className="absolute bottom-[-5%] left-1/2 transform -translate-x-1/2 w-11/12 md:w-3/4 bg-[#e0dcd4] shadow-lg rounded-lg p-2 hidden md:block">
           <div className="flex items-center justify-between space-x-4">
