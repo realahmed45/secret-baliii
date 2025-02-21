@@ -281,7 +281,7 @@ const Homepage = () => {
       </div>
 
       {/* Search Bar  for smaller screens */}
-      <div className="absolute bottom-[-5%] left-1/2 transform -translate-x-1/2 w-11/12 md:w-3/4 bg-[#e0dcd4] shadow-lg rounded-lg p-4 sm:hidden mb-96">
+      <div className="absolute bottom-[-5%] left-1/2 transform -translate-x-1/2 w-11/12 md:w-3/4 bg-[#e0dcd4] shadow-lg rounded-lg p-4 sm:hidden mb-80">
         <div className="flex flex-col space-y-4">
           {/* Check-In Field */}
           <div
