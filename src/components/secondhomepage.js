@@ -119,7 +119,8 @@ const Homepage = () => {
       <Navbar />
 
       {/* Hero Section with Background Image */}
-      <div className="relative lg:w-[85%] mt-0 h-[40%] bg-cover bg-center mx-auto border-[5px] border-white rounded-[20px] ">
+      {/* Hero Section with Background Image */}
+      <div className="relative lg:w-[85%] mt-0  h-[40%]  bg-cover bg-center mx-auto border-[5px] border-white rounded-[20px] ">
         {/* Search Bar for larger screens */}
         <div className="absolute bottom-[-5%] left-1/2 transform -translate-x-1/2 w-11/12 md:w-3/4 bg-[#e0dcd4] shadow-lg rounded-lg p-2 hidden md:block">
           <div className="flex items-center justify-between space-x-4">
@@ -280,7 +281,7 @@ const Homepage = () => {
       </div>
 
       {/* Search Bar  for smaller screens */}
-      <div className="absolute bottom-[-5%] left-1/2 transform -translate-x-1/2 w-11/12 md:w-3/4 bg-[#e0dcd4] shadow-lg rounded-lg p-4 sm:hidden mb-28">
+      <div className="absolute bottom-[-5%] left-1/2 transform -translate-x-1/2 w-11/12 md:w-3/4 bg-[#e0dcd4] shadow-lg rounded-lg p-4 sm:hidden mb-96">
         <div className="flex flex-col space-y-4">
           {/* Check-In Field */}
           <div
