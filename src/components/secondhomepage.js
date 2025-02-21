@@ -120,163 +120,162 @@ const Homepage = () => {
 
       {/* Hero Section with Background Image */}
       {/* Hero Section with Background Image */}
-      <div className="relative lg:w-[85%] mt-0  h-[40%]  bg-cover bg-center mx-auto border-[5px] border-white rounded-[20px] ">
-        {/* Search Bar for larger screens */}
-        <div className="absolute bottom-[-5%] left-1/2 transform -translate-x-1/2 w-11/12 md:w-3/4 bg-[#e0dcd4] shadow-lg rounded-lg p-2 hidden md:block">
-          <div className="flex items-center justify-between space-x-4">
-            {/* Check-In Field */}
-            <div className="relative">
-              <div
-                className="flex items-center space-x-2 cursor-pointer"
-                onClick={toggleCalendar}
-              >
-                <FaCalendarAlt className="text-[#e09c34]" />
-                <p className="text-gray-600">Add Dates</p>
-              </div>
-              {isCalendarOpen && (
-                <div className="absolute top-full mt-2 bg-white border shadow-lg rounded-lg p-4">
-                  <label className="block mb-2 text-sm font-semibold text-gray-600">
-                    Check-In Date:
-                  </label>
-                  <input
-                    type="date"
-                    value={checkInDate}
-                    onChange={(e) => setCheckInDate(e.target.value)}
-                    className="w-full border border-gray-300 rounded-lg p-2 mb-4 focus:outline-none focus:ring-2 focus:ring-[#e09c34]"
-                  />
-                  <label className="block mb-2 text-sm font-semibold text-gray-600">
-                    Check-Out Date:
-                  </label>
-                  <input
-                    type="date"
-                    value={checkOutDate}
-                    onChange={(e) => setCheckOutDate(e.target.value)}
-                    className="w-full border border-gray-300 rounded-lg p-2 focus:outline-none focus:ring-2 focus:ring-[#e09c34]"
-                  />
-                </div>
-              )}
-            </div>
 
-            {/* Guests Field */}
-            <div className="relative">
-              <div
-                className="flex items-center space-x-2 cursor-pointer"
-                onClick={toggleGuestSelector}
-              >
-                <FaUser className="text-[#e09c34]" />
-                <p className="text-gray-600">Add Guests</p>
-              </div>
-              {isGuestSelectorOpen && (
-                <div className="absolute top-full mt-2 bg-white border shadow-lg rounded-lg p-4">
-                  <div className="flex justify-between items-center mb-2">
-                    <p className="text-sm font-semibold text-gray-600">
-                      Adults <span className="text-xs">(13+ years)</span>
-                    </p>
-                    <div className="flex items-center space-x-2">
-                      <button
-                        onClick={() =>
-                          setGuests((prev) => ({
-                            ...prev,
-                            adults: Math.max(0, prev.adults - 1),
-                          }))
-                        }
-                        className="bg-gray-200 px-2 py-1 rounded-md"
-                      >
-                        -
-                      </button>
-                      <span>{guests.adults}</span>
-                      <button
-                        onClick={() =>
-                          setGuests((prev) => ({
-                            ...prev,
-                            adults: prev.adults + 1,
-                          }))
-                        }
-                        className="bg-gray-200 px-2 py-1 rounded-md"
-                      >
-                        +
-                      </button>
-                    </div>
-                  </div>
-                  <div className="flex justify-between items-center mb-2">
-                    <p className="text-sm font-semibold text-gray-600">
-                      Children <span className="text-xs">(2-12 years)</span>
-                    </p>
-                    <div className="flex items-center space-x-2">
-                      <button
-                        onClick={() =>
-                          setGuests((prev) => ({
-                            ...prev,
-                            children: Math.max(0, prev.children - 1),
-                          }))
-                        }
-                        className="bg-gray-200 px-2 py-1 rounded-md"
-                      >
-                        -
-                      </button>
-                      <span>{guests.children}</span>
-                      <button
-                        onClick={() =>
-                          setGuests((prev) => ({
-                            ...prev,
-                            children: prev.children + 1,
-                          }))
-                        }
-                        className="bg-gray-200 px-2 py-1 rounded-md"
-                      >
-                        +
-                      </button>
-                    </div>
-                  </div>
-                  <div className="flex justify-between items-center mb-4">
-                    <p className="text-sm font-semibold text-gray-600">
-                      Infants <span className="text-xs">(Under 2 years)</span>
-                    </p>
-                    <div className="flex items-center space-x-2">
-                      <button
-                        onClick={() =>
-                          setGuests((prev) => ({
-                            ...prev,
-                            infants: Math.max(0, prev.infants - 1),
-                          }))
-                        }
-                        className="bg-gray-200 px-2 py-1 rounded-md"
-                      >
-                        -
-                      </button>
-                      <span>{guests.infants}</span>
-                      <button
-                        onClick={() =>
-                          setGuests((prev) => ({
-                            ...prev,
-                            infants: prev.infants + 1,
-                          }))
-                        }
-                        className="bg-gray-200 px-2 py-1 rounded-md"
-                      >
-                        +
-                      </button>
-                    </div>
-                  </div>
-                  <button
-                    className="text-[#e09c34] font-semibold"
-                    onClick={toggleGuestSelector}
-                  >
-                    Close
-                  </button>
-                </div>
-              )}
-            </div>
-
-            {/* Submit Button */}
-            <button
-              type="submit"
-              className="flex items-center bg-[#e09c34] text-white font-bold py-2 px-6 rounded-lg hover:bg-[#d89332] focus:outline-none focus:ring-2 focus:ring-[#e09c34]"
+      {/* Search Bar for larger screens */}
+      <div className="absolute bottom-[-5%] left-1/2 transform -translate-x-1/2 w-11/12 md:w-3/4 bg-[#e0dcd4] shadow-lg rounded-lg p-2 hidden md:block">
+        <div className="flex items-center justify-between space-x-4">
+          {/* Check-In Field */}
+          <div className="relative">
+            <div
+              className="flex items-center space-x-2 cursor-pointer"
+              onClick={toggleCalendar}
             >
-              <FaSearch className="mr-2" />
-              Check Availability
-            </button>
+              <FaCalendarAlt className="text-[#e09c34]" />
+              <p className="text-gray-600">Add Dates</p>
+            </div>
+            {isCalendarOpen && (
+              <div className="absolute top-full mt-2 bg-white border shadow-lg rounded-lg p-4">
+                <label className="block mb-2 text-sm font-semibold text-gray-600">
+                  Check-In Date:
+                </label>
+                <input
+                  type="date"
+                  value={checkInDate}
+                  onChange={(e) => setCheckInDate(e.target.value)}
+                  className="w-full border border-gray-300 rounded-lg p-2 mb-4 focus:outline-none focus:ring-2 focus:ring-[#e09c34]"
+                />
+                <label className="block mb-2 text-sm font-semibold text-gray-600">
+                  Check-Out Date:
+                </label>
+                <input
+                  type="date"
+                  value={checkOutDate}
+                  onChange={(e) => setCheckOutDate(e.target.value)}
+                  className="w-full border border-gray-300 rounded-lg p-2 focus:outline-none focus:ring-2 focus:ring-[#e09c34]"
+                />
+              </div>
+            )}
           </div>
+
+          {/* Guests Field */}
+          <div className="relative">
+            <div
+              className="flex items-center space-x-2 cursor-pointer"
+              onClick={toggleGuestSelector}
+            >
+              <FaUser className="text-[#e09c34]" />
+              <p className="text-gray-600">Add Guests</p>
+            </div>
+            {isGuestSelectorOpen && (
+              <div className="absolute top-full mt-2 bg-white border shadow-lg rounded-lg p-4">
+                <div className="flex justify-between items-center mb-2">
+                  <p className="text-sm font-semibold text-gray-600">
+                    Adults <span className="text-xs">(13+ years)</span>
+                  </p>
+                  <div className="flex items-center space-x-2">
+                    <button
+                      onClick={() =>
+                        setGuests((prev) => ({
+                          ...prev,
+                          adults: Math.max(0, prev.adults - 1),
+                        }))
+                      }
+                      className="bg-gray-200 px-2 py-1 rounded-md"
+                    >
+                      -
+                    </button>
+                    <span>{guests.adults}</span>
+                    <button
+                      onClick={() =>
+                        setGuests((prev) => ({
+                          ...prev,
+                          adults: prev.adults + 1,
+                        }))
+                      }
+                      className="bg-gray-200 px-2 py-1 rounded-md"
+                    >
+                      +
+                    </button>
+                  </div>
+                </div>
+                <div className="flex justify-between items-center mb-2">
+                  <p className="text-sm font-semibold text-gray-600">
+                    Children <span className="text-xs">(2-12 years)</span>
+                  </p>
+                  <div className="flex items-center space-x-2">
+                    <button
+                      onClick={() =>
+                        setGuests((prev) => ({
+                          ...prev,
+                          children: Math.max(0, prev.children - 1),
+                        }))
+                      }
+                      className="bg-gray-200 px-2 py-1 rounded-md"
+                    >
+                      -
+                    </button>
+                    <span>{guests.children}</span>
+                    <button
+                      onClick={() =>
+                        setGuests((prev) => ({
+                          ...prev,
+                          children: prev.children + 1,
+                        }))
+                      }
+                      className="bg-gray-200 px-2 py-1 rounded-md"
+                    >
+                      +
+                    </button>
+                  </div>
+                </div>
+                <div className="flex justify-between items-center mb-4">
+                  <p className="text-sm font-semibold text-gray-600">
+                    Infants <span className="text-xs">(Under 2 years)</span>
+                  </p>
+                  <div className="flex items-center space-x-2">
+                    <button
+                      onClick={() =>
+                        setGuests((prev) => ({
+                          ...prev,
+                          infants: Math.max(0, prev.infants - 1),
+                        }))
+                      }
+                      className="bg-gray-200 px-2 py-1 rounded-md"
+                    >
+                      -
+                    </button>
+                    <span>{guests.infants}</span>
+                    <button
+                      onClick={() =>
+                        setGuests((prev) => ({
+                          ...prev,
+                          infants: prev.infants + 1,
+                        }))
+                      }
+                      className="bg-gray-200 px-2 py-1 rounded-md"
+                    >
+                      +
+                    </button>
+                  </div>
+                </div>
+                <button
+                  className="text-[#e09c34] font-semibold"
+                  onClick={toggleGuestSelector}
+                >
+                  Close
+                </button>
+              </div>
+            )}
+          </div>
+
+          {/* Submit Button */}
+          <button
+            type="submit"
+            className="flex items-center bg-[#e09c34] text-white font-bold py-2 px-6 rounded-lg hover:bg-[#d89332] focus:outline-none focus:ring-2 focus:ring-[#e09c34]"
+          >
+            <FaSearch className="mr-2" />
+            Check Availability
+          </button>
         </div>
       </div>
 
