@@ -120,8 +120,7 @@ const Gallery = () => {
       <Navbar />
 
       <div className="pt-28 ">
-        <h1 className="text-center text-3xl text-[#dc9c34]  font-bold mb-6">
-          {" "}
+        <h1 className="text-center text-3xl text-[#dc9c34] font-bold mb-6">
           Our Gallery
         </h1>
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4 max-w-6xl mx-auto">
@@ -152,6 +151,7 @@ const Gallery = () => {
               src={imageUrls[currentImageIndex]}
               alt={`Large View ${currentImageIndex + 1}`}
               className="max-w-4xl max-h-[80vh] border-4 border-white"
+              onClick={closeImage} // Clicking the image now closes the view
             />
             <button
               className="absolute top-1/2 right-5 text-white text-4xl transform -translate-y-1/2 focus:outline-none"
@@ -160,7 +160,7 @@ const Gallery = () => {
               {">"}
             </button>
             <button
-              className="absolute top-5 right-5 text-white text-3xl focus:outline-none"
+              className="absolute top-5 mt-14 right-5 text-white text-4xl focus:outline-none"
               onClick={closeImage}
             >
               ✖

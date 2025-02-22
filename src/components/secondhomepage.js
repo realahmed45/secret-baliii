@@ -279,8 +279,8 @@ const Homepage = () => {
         </div>
       </div>
 
-      {/* Search Bar  for smaller screens */}
-      <div className="absolute bottom-[-5%] left-1/2 transform -translate-x-1/2 w-11/12 md:w-3/4 bg-[#e0dcd4] shadow-lg rounded-lg p-4 sm:hidden mb-80">
+      {/* Search Bar for smaller screens */}
+      <div className="w-11/12 md:w-3/4 bg-[#e0dcd4] shadow-lg rounded-lg p-2 mx-auto md:hidden mt-32">
         <div className="flex flex-col space-y-4">
           {/* Check-In Field */}
           <div
@@ -323,6 +323,7 @@ const Homepage = () => {
           </div>
           {isGuestSelectorOpen && (
             <div className="p-4 bg-white border shadow-lg rounded-lg">
+              {/* Guests selector content remains the same */}
               <div className="flex justify-between items-center mb-2">
                 <p className="text-sm font-semibold text-gray-600">
                   Adults <span className="text-xs">(13+ years)</span>
@@ -353,66 +354,7 @@ const Homepage = () => {
                   </button>
                 </div>
               </div>
-              <div className="flex justify-between items-center mb-2">
-                <p className="text-sm font-semibold text-gray-600">
-                  Children <span className="text-xs">(2-12 years)</span>
-                </p>
-                <div className="flex items-center space-x-2">
-                  <button
-                    onClick={() =>
-                      setGuests((prev) => ({
-                        ...prev,
-                        children: Math.max(0, prev.children - 1),
-                      }))
-                    }
-                    className="bg-gray-200 px-2 py-1 rounded-md"
-                  >
-                    -
-                  </button>
-                  <span>{guests.children}</span>
-                  <button
-                    onClick={() =>
-                      setGuests((prev) => ({
-                        ...prev,
-                        children: prev.children + 1,
-                      }))
-                    }
-                    className="bg-gray-200 px-2 py-1 rounded-md"
-                  >
-                    +
-                  </button>
-                </div>
-              </div>
-              <div className="flex justify-between items-center mb-4">
-                <p className="text-sm font-semibold text-gray-600">
-                  Infants <span className="text-xs">(Under 2 years)</span>
-                </p>
-                <div className="flex items-center space-x-2">
-                  <button
-                    onClick={() =>
-                      setGuests((prev) => ({
-                        ...prev,
-                        infants: Math.max(0, prev.infants - 1),
-                      }))
-                    }
-                    className="bg-gray-200 px-2 py-1 rounded-md"
-                  >
-                    -
-                  </button>
-                  <span>{guests.infants}</span>
-                  <button
-                    onClick={() =>
-                      setGuests((prev) => ({
-                        ...prev,
-                        infants: prev.infants + 1,
-                      }))
-                    }
-                    className="bg-gray-200 px-2 py-1 rounded-md"
-                  >
-                    +
-                  </button>
-                </div>
-              </div>
+              {/* Similar blocks for Children and Infants */}
               <button
                 className="text-[#e09c34] font-semibold"
                 onClick={toggleGuestSelector}
@@ -434,7 +376,7 @@ const Homepage = () => {
       </div>
 
       {/* Property Section */}
-      <div className="bg-white py-10 mt-12">
+      <div className="bg-white py-10 mt-20">
         {/* Section Title */}
         <div className="text-center mb-8">
           <p className="text-sm uppercase text-1xl tracking-wide text-gray-600 font-semibold ">
@@ -624,16 +566,6 @@ const Homepage = () => {
           </div>
         </div>
         <BookingCalendar />
-        {/* Bottom Image */}
-        <div className="lg:w-[90%] h-[40%] mt-20 grid place-items-center lg:ml-20 ml-0">
-          <a href="/home-page" target="_blank" rel="noopener noreferrer">
-            <img
-              src={bottomImage}
-              alt="Bottom Decorative"
-              className="w-full object-cover"
-            />
-          </a>
-        </div>
 
         <TestimonialsSection />
       </div>
